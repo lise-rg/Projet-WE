@@ -49,15 +49,16 @@
                {{ tag }}
             </a>
           </div>
-
-          <div [hidden]="tagsLoaded">
-            Loading tags...
-          </div>
-
-          <div [hidden]="!tagsLoaded || tags.length > 0">
-            No tags are here... yet.
-          </div>
         </div>
+
+        <hr />
+
+        <div class="sidebar">
+          <p>Weather Forecast</p>
+
+          <app-weather></app-weather>
+        </div>
+
       </div>
 
     </div>
