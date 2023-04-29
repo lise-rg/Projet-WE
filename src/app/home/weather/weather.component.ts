@@ -16,7 +16,8 @@ export class WeatherComponent {
     this.fetchDetails().subscribe(data => {
       this.details = data;
 
-      // only used because of restricted access problem with Weatherstack
+      // here we reset the data manually
+      // only because of restricted access problems with Weatherstack
       this.setData();
     });
   }
@@ -24,7 +25,7 @@ export class WeatherComponent {
   fetchDetails() : Observable<WeatherDetails> {
     const params = {
       access_key: '1cd221fbd9ab168d7cf1373ac77edc33',
-      query: "Paris"
+      query: "Rennes"
     }
     return this.httpClient.get<WeatherDetails>('https://api.weatherstack.com/current', {params});
   }
